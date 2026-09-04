@@ -1,0 +1,46 @@
+<Window x:Class="Tokenmon.App.FloatingPetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tokenmon companion" Width="112" Height="112"
+        AllowsTransparency="True" WindowStyle="None" ResizeMode="NoResize"
+        Background="Transparent" ShowInTaskbar="False" Topmost="True"
+        MouseLeftButtonDown="PetMouseDown" MouseLeftButtonUp="PetMouseUp"
+        MouseMove="PetMouseMove" MouseDoubleClick="PetDoubleClick">
+    <Grid ToolTip="{Binding TodayTokens, StringFormat=Today: {0} tokens}">
+        <Border Background="#22000000" CornerRadius="16" />
+        <Grid Width="58" Height="72" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsEgg}" Value="True">
+                            <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Ellipse Stroke="#FFE2A93B" StrokeThickness="3">
+                <Ellipse.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#FFFFF3BE" />
+                        <GradientStop Color="#FFFFD96A" Offset="1" />
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Width="13" Height="17" Fill="#FFECA94B" Margin="10,12,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <Ellipse Width="10" Height="13" Fill="#FFFFE99A" Margin="0,0,9,14" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        </Grid>
+        <Image Source="{Binding SpritePath}" Margin="6" RenderOptions.BitmapScalingMode="NearestNeighbor">
+            <Image.Style>
+                <Style TargetType="Image">
+                    <Setter Property="Visibility" Value="Visible" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsEgg}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Image.Style>
+        </Image>
+    </Grid>
+</Window>

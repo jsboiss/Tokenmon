@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Tokenmon.App/Tokenmon.App.csproj" />
+  <Project Path="Tokenmon.Core.Tests/Tokenmon.Core.Tests.csproj" />
+  <Project Path="Tokenmon.Core/Tokenmon.Core.csproj" />
+</Solution>
