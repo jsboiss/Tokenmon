@@ -7,6 +7,12 @@ Tokenmon lives in the notification area, reads local usage logs, and converts to
 > [!NOTE]
 > Tokenmon is an unofficial, non-commercial fan project. Pokémon names, characters, and artwork belong to their respective owners.
 
+## Screenshots
+
+| Home | Bag |
+| --- | --- |
+| ![Tokenmon home screen showing companion progress, token usage, wallet, and rate limits](docs/screenshots/home.png) | ![Tokenmon bag screen showing Rare Candy, Mint, and Shiny Charm items](docs/screenshots/bag.png) |
+
 ## Features
 
 - Native Windows notification-area icon and context menu
